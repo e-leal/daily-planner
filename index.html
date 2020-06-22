@@ -87,6 +87,7 @@
     <script>
       // get today's date in desired format
         var today = moment().format("dddd, MMMM Do YYYY");
+        console.log(typeof(today));
         // assign today's date to display in the currentDay 
         var currentDate = document.getElementById("currentDay");
         var plannedTasks = JSON.parse(localStorage.getItem('plans')) || [];
@@ -116,6 +117,13 @@
         function renderPlans(){
           for (var i = 0; i<plannedTasks.length; i++){
             //var planItem = $("<div>");
+              console.log(typeof(plannedTasks[i].date));
+            if(plannedTasks[i].date != today){
+              console.log(typeof(plannedTasks[i].date));
+              plannedTasks.splice(i,1);
+              savePlans();
+              renderPlans();
+            }
             var text = plannedTasks[i].plan;
             //planItem.text = plannedTasks[i].plan;
             var block = document.getElementById(plannedTasks[i].hour).childNodes;
@@ -200,7 +208,8 @@
           $(descripDev).replaceWith(parInput);
           var newPlan = {
                           hour: thisHour,
-                          plan: text
+                          plan: text,
+                          date: today
                         };
           plannedTasks.push(newPlan);
           savePlans();
