@@ -69,3 +69,10 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+/* textarea, 
+textarea:focus,
+textarea:active{
+  background: transparent;
+} */
+
