@@ -132,7 +132,7 @@
           }
         }
 
-        $(".description").on("blur", function(){
+        $(".description").on("blur", "textarea", function(){
           // get the textarea's current value/text
           console.log($(this).val());
           var text = $(this).val().trim();
@@ -146,10 +146,10 @@
           // get the plan's position in the list of other elements
           //var index = $(this).closest
 
-          plannedTasks[hour].text = text;
-          savePlans();
+          //plannedTasks[hour].text = text;
+          //savePlans();
           // recreate p element
-          var planP = $("<p>").addClass("m-1").text(text);
+          //var planP = $("<p>").addClass("m-1").text(text);
         });
 
         function savePlans(){
