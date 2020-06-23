@@ -5,3 +5,7 @@ At the top of the display, the user will be able to see the current day and date
 The content will reset from one day to the next. Meaning that if a user enters scheduled items for Saturday, June 21st, then those scheduled items will be removed by Sunday, June 22nd.
 If a user enters content and saves it, but then decides to remove said plan from their schedule, a user can make the text area empty and it will remove the previously saved item from the schedule list.
 
+Repository URL: https://github.com/e-leal/daily-planner
+Live URL: https://e-leal.github.io/daily-planner/
+
+Screenshot: daily-planner-screenshot
