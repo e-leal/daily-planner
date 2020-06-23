@@ -98,11 +98,15 @@ $(".saveBtn").on('click', function(event){
     plan: text,
     date: today
   };
-  console.log(newPlan);
   var existCheck = false;
     for(var i =0; i<plannedTasks.length; i++){
         if(plannedTasks[i].hour === thisHour){
-            plannedTasks[i].plan = text;
+            if($(parInput).text().trim().length < 1){
+              plannedTasks.splice(i, 1);
+            }
+            else{
+              plannedTasks[i].plan = text; 
+            }
             existCheck = true;
         }
     }
